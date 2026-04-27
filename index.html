@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegancia Academia | Seminario Presencial de Grooming Profesional</title>
+<meta name="description" content="Únete al seminario presencial de Elegancia Academia el 7 de junio de 2026 en el Hotel Marriott, Escazú. Grooming, negocios y desarrollo personal con Priscila Arrieta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;
+  --gold-light:#E8C97A;
+  --gold-dark:#A07830;
+  --black:#0A0A0A;
+  --dark:#111118;
+  --dark2:#18181F;
+  --dark3:#22222C;
+  --white:#FAFAFA;
+  --gray:#9999AA;
+  --font-serif:'Cormorant Garamond',serif;
+  --font-sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:var(--font-sans);line-height:1.6;overflow-x:hidden}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--black)}
+.hero-bg{position:absolute;inset:0;background:url('hero_grooming_1777173253089.png') center/cover no-repeat;opacity:0.35;transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.4) 0%,rgba(10,10,10,0.7) 60%,var(--black) 100%)}
+.hero-content{position:relative;z-index:2;max-width:860px;padding:2rem 1.5rem;animation:fadeUp 1s ease both}
+.hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-family:var(--font-sans);font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1.5rem;border-radius:2rem;margin-bottom:1.5rem}
+.hero h1{font-family:var(--font-serif);font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1rem;color:var(--white)}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.8);max-width:640px;margin:0 auto 2rem}
+.hero-details{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2.5rem}
+.hero-detail{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(201,168,76,.25);border-radius:.5rem;padding:.6rem 1.2rem;font-size:.9rem}
+.hero-detail .icon{font-size:1.1rem}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--black);font-family:var(--font-sans);font-size:1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:3rem;text-decoration:none;transition:all .3s ease;box-shadow:0 4px 30px rgba(201,168,76,.4)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(201,168,76,.6)}
+.btn-outline{background:transparent;border:2px solid var(--gold);color:var(--gold);margin-left:1rem}
+.btn-outline:hover{background:var(--gold);color:var(--black)}
+
+/* SECTION BASE */
+section{padding:5rem 1.5rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.section-title{font-family:var(--font-serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.2;margin-bottom:1rem}
+.section-title span{color:var(--gold)}
+.section-sub{color:var(--gray);max-width:620px;font-size:1.05rem}
+.divider{width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin:1.5rem 0}
+
+/* PROBLEM */
+.problem{background:var(--dark)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem}
+.problem-img{border-radius:1rem;overflow:hidden;position:relative}
+.problem-img img{width:100%;height:480px;object-fit:cover;display:block;filter:brightness(.9)}
+.problem-img::after{content:'';position:absolute;inset:0;border-radius:1rem;border:1px solid rgba(201,168,76,.3)}
+.problem-text p{color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:1rem;line-height:1.8}
+.problem-quote{border-left:3px solid var(--gold);padding:1rem 1.5rem;background:rgba(201,168,76,.07);border-radius:0 .5rem .5rem 0;font-family:var(--font-serif);font-size:1.3rem;font-style:italic;color:var(--white);margin:1.5rem 0}
+
+/* ABOUT */
+.about{background:var(--dark2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+.about-img-wrap{position:relative}
+.about-img-wrap img{width:100%;height:560px;object-fit:cover;object-position:top;border-radius:1rem;display:block}
+.about-badge{position:absolute;bottom:2rem;right:-1.5rem;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--black);padding:1rem 1.5rem;border-radius:.75rem;text-align:center;font-weight:700;box-shadow:0 8px 30px rgba(201,168,76,.4)}
+.about-badge .num{font-family:var(--font-serif);font-size:2.5rem;display:block;line-height:1}
+.about-badge .lbl{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.about-text p{color:rgba(255,255,255,.8);font-size:1.05rem;line-height:1.8;margin-bottom:1rem}
+
+/* LEARNINGS */
+.learnings{background:var(--dark)}
+.learnings-intro{max-width:620px;margin-bottom:3rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;margin-top:2rem}
+.card{background:var(--dark2);border:1px solid rgba(201,168,76,.15);border-radius:1rem;padding:2rem 1.5rem;transition:all .3s ease;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:0;transition:.3s}
+.card:hover{border-color:rgba(201,168,76,.5);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card:hover::before{opacity:1}
+.card-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.card h3{font-family:var(--font-serif);font-size:1.3rem;color:var(--gold);margin-bottom:.75rem}
+.card p{color:var(--gray);font-size:.92rem;line-height:1.7}
+
+/* SEMINAR IMAGE BANNER */
+.banner{background:var(--dark2);padding:0}
+.banner img{width:100%;max-height:520px;object-fit:cover;display:block;opacity:.85}
+
+/* DETAILS */
+.details{background:var(--dark)}
+.details-box{background:var(--dark2);border:1px solid rgba(201,168,76,.2);border-radius:1.5rem;padding:3rem;max-width:800px;margin:3rem auto 0}
+.detail-row{display:flex;align-items:flex-start;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.detail-row:last-child{border-bottom:none}
+.detail-icon{font-size:1.8rem;min-width:2.5rem;text-align:center}
+.detail-info strong{display:block;color:var(--gold);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.2rem}
+.detail-info span{font-size:1.05rem;color:var(--white)}
+.detail-info small{display:block;color:var(--gray);font-size:.87rem;margin-top:.2rem}
+.price-highlight{text-align:center;margin-top:2rem;padding:2rem;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border-radius:1rem;border:1px solid rgba(201,168,76,.3)}
+.price-highlight .price{font-family:var(--font-serif);font-size:3.5rem;font-weight:700;color:var(--gold)}
+.price-highlight .price-label{color:var(--gray);font-size:.9rem;margin-bottom:.5rem}
+.price-highlight .includes{color:rgba(255,255,255,.7);font-size:.92rem;margin-top:.75rem}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,var(--dark2) 0%,var(--dark3) 100%);text-align:center;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)}
+.cta-section h2{font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
+.cta-section p{color:var(--gray);max-width:540px;margin:0 auto 2rem}
+.cta-section .urgency{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.4);color:var(--gold);padding:.5rem 1.2rem;border-radius:2rem;font-size:.85rem;font-weight:600;margin-bottom:1.5rem;letter-spacing:.05em}
+
+/* POMERANIAN SECTION */
+.pom-section{background:var(--dark2);overflow:hidden}
+.pom-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.pom-img img{width:100%;height:460px;object-fit:cover;border-radius:1rem;display:block}
+.pom-text .section-sub{max-width:100%}
+.pom-list{list-style:none;margin-top:1.5rem}
+.pom-list li{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.8);font-size:.95rem}
+.pom-list li span{color:var(--gold);font-size:1.1rem;min-width:1.5rem}
+
+/* FOOTER */
+footer{background:var(--black);text-align:center;padding:2.5rem 1.5rem;border-top:1px solid rgba(201,168,76,.1)}
+footer .logo-text{font-family:var(--font-serif);font-size:1.5rem;color:var(--gold);margin-bottom:.5rem}
+footer p{color:var(--gray);font-size:.85rem}
+
+/* FLOATING CTA */
+.floating-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--black);font-weight:700;font-size:.85rem;padding:.8rem 1.5rem;border-radius:3rem;text-decoration:none;box-shadow:0 6px 30px rgba(201,168,76,.5);animation:pulse 2s infinite;letter-spacing:.04em;text-transform:uppercase}
+.floating-cta:hover{transform:scale(1.05)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 6px 30px rgba(201,168,76,.5)}50%{box-shadow:0 6px 50px rgba(201,168,76,.8)}}
+.fade-in{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .problem-grid,.about-grid,.pom-grid{grid-template-columns:1fr}
+  .about-badge{right:.5rem;bottom:1rem}
+  .btn-outline{margin-left:0;margin-top:.75rem}
+  .details-box{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING CTA -->
+<a href="#inscripcion" class="floating-cta" id="floating-cta">🐾 ¡Me Inscribo Ahora!</a>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Evento Presencial · 7 de Junio 2026</div>
+    <h1>Transforma tu Pasión<br>por el Grooming en un<br><span>Negocio Altamente Rentable</span></h1>
+    <p class="hero-sub">Únete a Elegancia Academia en una experiencia presencial única que fusiona el arte del Grooming, Estrategias de Marketing y Desarrollo Personal.</p>
+    <div class="hero-details">
+      <div class="hero-detail"><span class="icon">🗓</span> 07 de Junio, 2026</div>
+      <div class="hero-detail"><span class="icon">📍</span> Hotel Marriott, Escazú · Costa Rica</div>
+      <div class="hero-detail"><span class="icon">💰</span> ₡35,000 Colones</div>
+    </div>
+    <a href="#inscripcion" class="btn">¡Quiero mi Lugar!</a>
+  </div>
+</section>
+
+<!-- PROBLEM / INTRO -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid fade-in">
+      <div class="problem-img">
+        <img src="hero_grooming_1777173253089.png" alt="Grooming profesional de alta gama">
+      </div>
+      <div class="problem-text">
+        <div class="section-label">¿Te Identificas con Esto?</div>
+        <h2 class="section-title">El Talento Solo <span>No Basta</span></h2>
+        <div class="divider"></div>
+        <p>¿Sientes que tienes talento para la peluquería canina, pero te cuesta atraer más clientes o llevar tu emprendimiento al siguiente nivel?</p>
+        <div class="problem-quote">"El grooming moderno va mucho más allá de un buen baño y un corte a tijera."</div>
+        <p>Requiere <strong style="color:var(--gold)">técnica profesional, visión empresarial y una mentalidad ganadora</strong> para destacar en la industria. Exactamente eso es lo que aprenderás aquí.</p>
+        <br>
+        <a href="#inscripcion" class="btn">Sí, Quiero Crecer Profesionalmente</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PRISCILA -->
+<section class="about">
+  <div class="container">
+    <div class="about-grid fade-in">
+      <div class="about-img-wrap">
+        <img src="priscila_portrait_1777173284728.png" alt="Priscila Arrieta, fundadora de Elegancia Grooming">
+        <div class="about-badge">
+          <span class="num">14</span>
+          <span class="lbl">Años de Trayectoria</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Tu Instructora</div>
+        <h2 class="section-title">Priscila Arrieta —<br><span>La Revolucionaria del Grooming</span></h2>
+        <div class="divider"></div>
+        <p>Con casi <strong style="color:var(--gold)">14 años de trayectoria</strong> y como fundadora del exitoso proyecto "Elegancia Grooming", Priscila Arrieta ha revolucionado la forma de enseñar en esta industria.</p>
+        <p>Su innovadora metodología trabaja desde el <strong style="color:var(--gold)">subconsciente y el desarrollo personal</strong>, logrando que los peluqueros caninos no solo dominen la técnica desde el primer día, sino que también transformen su forma de hacer negocios.</p>
+        <p>Además de su pasión por las mascotas, Priscila se dedica activamente a <strong style="color:var(--gold)">potenciar marcas y emprendimientos</strong>, ¡y ahora quiere compartir todas sus estrategias de éxito contigo!</p>
+        <br>
+        <a href="#inscripcion" class="btn">¡Aprender con Priscila!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEMINAR BANNER -->
+<div class="banner">
+  <img src="seminar_event_1777173266737.png" alt="Seminario presencial Elegancia Academia">
+</div>
+
+<!-- LEARNINGS -->
+<section class="learnings">
+  <div class="container">
+    <div class="learnings-intro fade-in">
+      <div class="section-label">Contenido del Seminario</div>
+      <h2 class="section-title">¿Qué <span>Aprenderás</span>?</h2>
+      <div class="divider"></div>
+      <p class="section-sub">En este exclusivo seminario intensivo disfrutarás de actividades motivacionales y de desarrollo personal con herramientas prácticas y reales para aplicar al instante en tu salón.</p>
+    </div>
+    <div class="cards fade-in">
+      <div class="card">
+        <span class="card-icon">✂️</span>
+        <h3>Técnica y Morfología</h3>
+        <p>Dominarás el codiciado corte comercial en Pomerania y comprenderás la estructura canina ósea para cortes precisos, seguros y estéticamente perfectos.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🚀</span>
+        <h3>Crecimiento de Negocio</h3>
+        <p>Descubrirás estrategias comprobadas para potenciar tu peluquería canina y diferenciarte de la competencia de forma efectiva y sostenible.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <h3>Presencia Digital</h3>
+        <p>Marketing, publicidad y creación de videos cortos para que tu trabajo sea visto por miles de personas en redes sociales.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">👥</span>
+        <h3>Ventas y Fidelización</h3>
+        <p>Aprenderás a crear tu perfil de cliente potencial y las claves para que tus clientes siempre regresen y te recomienden.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="#inscripcion" class="btn fade-in">¡Quiero Aprender Todo Esto!</a>
+    </div>
+  </div>
+</section>
+
+<!-- POMERANIAN TECHNIQUE -->
+<section class="pom-section">
+  <div class="container">
+    <div class="pom-grid fade-in">
+      <div class="pom-img">
+        <img src="pomeranian_groomed_1777173299934.png" alt="Corte comercial en Pomerania">
+      </div>
+      <div class="pom-text">
+        <div class="section-label">Habilidad Estrella</div>
+        <h2 class="section-title">El Corte Comercial en<br><span>Pomerania</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub">Uno de los cortes más solicitados y mejor pagados del mercado. Aprenderás la técnica completa de principio a fin con la guía experta de Priscila.</p>
+        <ul class="pom-list">
+          <li><span>✓</span> Comprensión de la estructura ósea canina</li>
+          <li><span>✓</span> Técnica precisa con tijera y maquinilla</li>
+          <li><span>✓</span> Morfología y proporciones del corte</li>
+          <li><span>✓</span> Cómo cobrarlo correctamente</li>
+          <li><span>✓</span> Fotografía del resultado para redes sociales</li>
+        </ul>
+        <br>
+        <a href="#inscripcion" class="btn">¡Dominar Esta Técnica!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS & PRICE -->
+<section class="details" id="detalles">
+  <div class="container fade-in" style="text-align:center">
+    <div class="section-label">Información del Evento</div>
+    <h2 class="section-title">Detalles del <span>Seminario</span></h2>
+    <div class="divider" style="margin:1.5rem auto"></div>
+    <div class="details-box">
+      <div class="detail-row">
+        <div class="detail-icon">🗓</div>
+        <div class="detail-info">
+          <strong>Fecha</strong>
+          <span>07 de Junio de 2026</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">📍</div>
+        <div class="detail-info">
+          <strong>Lugar</strong>
+          <span>Hotel Marriott, Escazú</span>
+          <small>San José, Costa Rica</small>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">☕</div>
+        <div class="detail-info">
+          <strong>¿Qué Incluye?</strong>
+          <span>Acceso completo a la capacitación</span>
+          <small>Actividades de desarrollo personal + Coffee Break</small>
+        </div>
+      </div>
+      <div class="price-highlight">
+        <p class="price-label">Inversión Total</p>
+        <div class="price">₡35,000</div>
+        <p class="includes">Colones · Incluye todo el día de formación + coffee break</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CTA -->
+<section class="cta-section" id="inscripcion">
+  <div class="container fade-in">
+    <div class="urgency">⚡ Cupos Muy Limitados · Asegura el Tuyo Hoy</div>
+    <h2 class="section-title">No Pierdas Esta <span>Oportunidad Única</span></h2>
+    <p>Capacítate con una profesional que entiende que para tener un negocio exitoso, primero debes desarrollarte desde el interior.</p>
+    <a href="#" class="btn" id="btn-inscribirse" style="font-size:1.1rem;padding:1.2rem 3rem">✨ ¡Inscribirme Ahora por ₡35,000!</a>
+    <p style="margin-top:1rem;color:var(--gray);font-size:.85rem">📍 Hotel Marriott, Escazú · 7 de Junio 2026</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo-text">Elegancia Academia</div>
+  <p>© 2026 Elegancia Grooming · Todos los derechos reservados</p>
+  <p style="margin-top:.5rem">Un proyecto de <strong style="color:var(--gold)">Priscila Arrieta</strong></p>
+</footer>
+
+<script>
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Hide floating CTA when in #inscripcion section
+const ctaSection = document.getElementById('inscripcion');
+const floatingCta = document.getElementById('floating-cta');
+const ctaObserver = new IntersectionObserver((entries) => {
+  floatingCta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+  floatingCta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+}, { threshold: 0.3 });
+ctaObserver.observe(ctaSection);
+</script>
+</body>
+</html>
