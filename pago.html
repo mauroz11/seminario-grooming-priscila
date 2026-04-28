@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pago | Elegancia Academia · Seminario Presencial</title>
+<meta name="description" content="Formaliza tu inscripción al Seminario Presencial de Elegancia Academia. Realiza tu transferencia y reserva tu lugar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;
+  --gold-light:#E8C97A;
+  --gold-dark:#A07830;
+  --black:#0A0A0A;
+  --dark:#111118;
+  --dark2:#18181F;
+  --dark3:#22222C;
+  --white:#FAFAFA;
+  --gray:#9999AA;
+  --green:#2ECC71;
+  --font-serif:'Cormorant Garamond',serif;
+  --font-sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:var(--font-sans);line-height:1.6;min-height:100vh}
+
+/* TOP BAR */
+.topbar{background:var(--black);border-bottom:1px solid rgba(201,168,76,.15);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:.75rem}
+.topbar-logo{font-family:var(--font-serif);font-size:1.3rem;color:var(--gold);letter-spacing:.05em}
+.topbar-sep{color:rgba(255,255,255,.2);font-size:1rem}
+.topbar-step{font-size:.8rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase}
+
+/* HERO STRIP */
+.hero-strip{background:linear-gradient(135deg,var(--black) 0%,var(--dark2) 100%);border-bottom:1px solid rgba(201,168,76,.15);padding:3.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero-strip::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(201,168,76,.08) 0%,transparent 70%);pointer-events:none}
+.hero-strip .badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(201,168,76,.4);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:2rem;margin-bottom:1.2rem;background:rgba(201,168,76,.06)}
+.hero-strip h1{font-family:var(--font-serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:.75rem}
+.hero-strip h1 span{color:var(--gold)}
+.hero-strip p{color:rgba(255,255,255,.75);max-width:600px;margin:0 auto;font-size:1rem;line-height:1.75}
+
+/* MAIN LAYOUT */
+.main{max-width:960px;margin:0 auto;padding:3rem 1.5rem 5rem;display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;align-items:start}
+
+/* CARD BASE */
+.card{background:var(--dark2);border:1px solid rgba(201,168,76,.15);border-radius:1rem;overflow:hidden}
+.card-header{padding:1.25rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.1);display:flex;align-items:center;gap:.75rem}
+.card-header .icon{font-size:1.25rem}
+.card-header h2{font-family:var(--font-serif);font-size:1.25rem;color:var(--gold)}
+.card-body{padding:1.5rem}
+
+/* ORDER SUMMARY */
+.summary-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.92rem}
+.summary-row:last-of-type{border-bottom:none}
+.summary-label{color:var(--gray)}
+.summary-value{color:var(--white);font-weight:500;text-align:right}
+.summary-total{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding:1.1rem 1.25rem;background:linear-gradient(135deg,rgba(201,168,76,.13),rgba(201,168,76,.05));border-radius:.75rem;border:1px solid rgba(201,168,76,.3)}
+.summary-total .label{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.summary-total .amount{font-family:var(--font-serif);font-size:2rem;font-weight:700;color:var(--gold)}
+
+.scarcity{display:flex;align-items:flex-start;gap:.75rem;margin-top:1.25rem;padding:1rem;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:.75rem}
+.scarcity .sc-icon{font-size:1.2rem;min-width:1.5rem;padding-top:.1rem}
+.scarcity p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6}
+.scarcity strong{color:var(--gold)}
+
+/* PAYMENT CARD */
+.bank-detail{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:var(--dark3);border-radius:.75rem;margin-bottom:.75rem;border:1px solid rgba(255,255,255,.05);transition:.3s}
+.bank-detail:hover{border-color:rgba(201,168,76,.25)}
+.bank-detail .bd-label{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.bank-detail .bd-value{font-size:.97rem;color:var(--white);font-weight:500}
+.bank-detail .bd-icon{font-size:1.3rem;min-width:2rem;text-align:center;padding-top:.1rem}
+
+/* IBAN COPY */
+.iban-wrap{position:relative}
+.iban-wrap .bd-value{font-family:monospace;font-size:1rem;letter-spacing:.04em;word-break:break-all}
+.copy-btn{position:absolute;top:50%;right:.5rem;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:.4rem;cursor:pointer;transition:.2s;font-family:var(--font-sans);white-space:nowrap}
+.copy-btn:hover{background:rgba(201,168,76,.3)}
+.copy-btn.copied{color:var(--green);border-color:var(--green)}
+
+/* STEPS */
+.steps{list-style:none;margin-top:.25rem}
+.step-item{display:flex;align-items:flex-start;gap:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.step-item:last-child{border-bottom:none}
+.step-num{min-width:2rem;height:2rem;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--black);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-text strong{display:block;color:var(--white);font-size:.95rem;margin-bottom:.2rem}
+.step-text span{color:var(--gray);font-size:.87rem;line-height:1.55}
+
+/* WHATSAPP BTN */
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:.75rem;width:100%;padding:1.1rem 1.5rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-family:var(--font-sans);font-size:1rem;font-weight:700;letter-spacing:.03em;border-radius:.75rem;text-decoration:none;margin-top:1.5rem;transition:all .3s ease;box-shadow:0 6px 25px rgba(37,211,102,.3);border:none;cursor:pointer}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(37,211,102,.45)}
+.btn-wa svg{width:1.4rem;height:1.4rem;flex-shrink:0}
+.btn-wa .btn-sub{font-size:.75rem;font-weight:400;opacity:.85;display:block;margin-top:.1rem}
+
+/* SECURITY BADGES */
+.security{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem;justify-content:center}
+.sec-badge{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--gray)}
+.sec-badge span{font-size:1rem}
+
+/* FOOTER */
+footer{background:var(--black);text-align:center;padding:2rem 1.5rem;border-top:1px solid rgba(201,168,76,.1)}
+footer .logo-text{font-family:var(--font-serif);font-size:1.3rem;color:var(--gold);margin-bottom:.4rem}
+footer p{color:var(--gray);font-size:.82rem}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-strip{animation:fadeUp .8s ease both}
+.card{animation:fadeUp .8s ease both}
+.card:nth-child(2){animation-delay:.15s}
+
+/* RESPONSIVE */
+@media(max-width:720px){
+  .main{grid-template-columns:1fr}
+  .iban-wrap .bd-value{padding-right:4.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-logo">Elegancia Academia</span>
+  <span class="topbar-sep">|</span>
+  <span class="topbar-step">Paso final · Formalizar inscripción</span>
+</div>
+
+<!-- HERO STRIP -->
+<div class="hero-strip">
+  <div class="badge">✨ ¡Decisión tomada!</div>
+  <h1>Estás a un Solo Paso de<br><span>Transformar tu Carrera</span></h1>
+  <p>Has tomado la excelente decisión de invertir en ti y en tu negocio. Prepárate para vivir una experiencia formativa inmersiva donde la técnica perfecta del grooming y el desarrollo personal se unen para llevarte al siguiente nivel.</p>
+</div>
+
+<!-- MAIN GRID -->
+<div class="main">
+
+  <!-- LEFT: ORDER SUMMARY -->
+  <div>
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">🧾</span>
+        <h2>Resumen de tu Inversión</h2>
+      </div>
+      <div class="card-body">
+        <div class="summary-row">
+          <span class="summary-label">Evento</span>
+          <span class="summary-value">Seminario Presencial<br>Elegancia Academia</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Fecha</span>
+          <span class="summary-value">07 de Junio, 2026</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Lugar</span>
+          <span class="summary-value">Hotel Marriott, Escazú<br>San José, Costa Rica</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Incluye</span>
+          <span class="summary-value">Capacitación completa<br>Desarrollo personal<br>Coffee break</span>
+        </div>
+        <div class="summary-total">
+          <span class="label">Total a Pagar</span>
+          <span class="amount">₡35,000</span>
+        </div>
+
+        <div class="scarcity">
+          <div class="sc-icon">⚡</div>
+          <p>Para garantizar una experiencia exclusiva y de alto impacto, los cupos son <strong>estrictamente limitados</strong>. No dejes que alguien más tome el lugar que te corresponde.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: PAYMENT INSTRUCTIONS -->
+  <div style="display:flex;flex-direction:column;gap:1.5rem">
+
+    <!-- BANK DETAILS -->
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">💳</span>
+        <h2>Datos para tu Transferencia</h2>
+      </div>
+      <div class="card-body">
+        <p style="color:var(--gray);font-size:.9rem;margin-bottom:1.25rem">Para formalizar tu espacio, realiza una transferencia bancaria con los siguientes datos oficiales:</p>
+
+        <div class="bank-detail">
+          <div class="bd-icon">🏦</div>
+          <div>
+            <div class="bd-label">Banco</div>
+            <div class="bd-value">Banco de Costa Rica (BCR)</div>
+          </div>
+        </div>
+
+        <div class="bank-detail">
+          <div class="bd-icon">👤</div>
+          <div>
+            <div class="bd-label">A nombre de</div>
+            <div class="bd-value">ARRIETA SOLANO RAQUEL PRISCILA</div>
+          </div>
+        </div>
+
+        <div class="bank-detail iban-wrap" id="iban-row">
+          <div class="bd-icon">🔢</div>
+          <div style="flex:1;padding-right:5rem">
+            <div class="bd-label">Número de cuenta (IBAN)</div>
+            <div class="bd-value" id="iban-text">CR47015201001044395976</div>
+          </div>
+          <button class="copy-btn" id="copy-btn" onclick="copyIBAN()">Copiar</button>
+        </div>
+
+        <div class="bank-detail">
+          <div class="bd-icon">📂</div>
+          <div>
+            <div class="bd-label">Tipo de cuenta</div>
+            <div class="bd-value">CTE — Cuenta Corriente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEPS AFTER PAYMENT -->
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">📱</span>
+        <h2>¿Qué Hacer Después del Pago?</h2>
+      </div>
+      <div class="card-body">
+        <ul class="steps">
+          <li class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <strong>Guarda tu comprobante</strong>
+              <span>Toma una captura de pantalla clara del comprobante de tu transferencia exitosa.</span>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <strong>Envíalo por WhatsApp</strong>
+              <span>Envía esa captura directamente a nuestro WhatsApp usando el botón de abajo.</span>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <strong>Oficializa tu lugar</strong>
+              <span>Una vez verificado el pago, recibirás de inmediato las instrucciones finales para confirmar tu inscripción.</span>
+            </div>
+          </li>
+        </ul>
+
+        <!-- WHATSAPP BUTTON -->
+        <a href="https://wa.me/50686851515?text=Hola%20Priscila!%20Acabo%20de%20realizar%20mi%20pago%20para%20el%20Seminario%20Presencial%20de%20Elegancia%20Academia.%20Te%20adjunto%20mi%20comprobante%20de%20transferencia.%20%F0%9F%90%BE%F0%9F%92%AB" 
+           class="btn-wa" 
+           id="btn-whatsapp"
+           target="_blank"
+           rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.858L.057 23.18a.75.75 0 00.916.932l5.42-1.463A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.964-1.362l-.356-.212-3.685.995.982-3.594-.232-.37A9.721 9.721 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          <div>
+            ¡Ya realicé mi pago! Enviar comprobante
+            <span class="btn-sub">Toca aquí para abrir WhatsApp</span>
+          </div>
+        </a>
+
+        <div class="security">
+          <div class="sec-badge"><span>🔒</span> Datos bancarios oficiales</div>
+          <div class="sec-badge"><span>✅</span> Cupo confirmado al verificar pago</div>
+          <div class="sec-badge"><span>🐾</span> Elegancia Academia</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOTIVATIONAL CLOSE -->
+    <div style="background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.25);border-radius:1rem;padding:1.5rem 1.75rem;text-align:center">
+      <p style="font-family:var(--font-serif);font-size:1.25rem;font-style:italic;color:var(--white);line-height:1.6;margin-bottom:.5rem">"Tu crecimiento profesional, la escalabilidad de tu peluquería canina y tu desarrollo personal están a solo una transferencia de distancia."</p>
+      <p style="color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase">— Priscila Arrieta · Elegancia Grooming</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo-text">Elegancia Academia</div>
+  <p>© 2026 Elegancia Grooming · Todos los derechos reservados</p>
+  <p style="margin-top:.4rem">Un proyecto de <strong style="color:var(--gold)">Priscila Arrieta</strong></p>
+</footer>
+
+<script>
+function copyIBAN() {
+  const iban = document.getElementById('iban-text').innerText;
+  const btn = document.getElementById('copy-btn');
+  navigator.clipboard.writeText(iban).then(() => {
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copiar';
+      btn.classList.remove('copied');
+    }, 2500);
+  });
+}
+</script>
+</body>
+</html>
